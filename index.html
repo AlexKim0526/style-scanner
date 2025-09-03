@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 스타일 스캐너 | LaundryGo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* 사용자 정의 스타일 */
+        body {
+            font-family: 'Inter', 'Noto Sans KR', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .hero-bg {
+            background-image: url('https://placehold.co/1920x1080/111827/FFFFFF?text=AI+Style+Scanner');
+            background-size: cover;
+            background-position: center;
+        }
+        .section-title {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 900;
+        }
+        /* 스크롤 애니메이션을 위한 기본 상태 */
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        /* 스크롤 시 나타나는 활성 상태 */
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .counter-value {
+            transition: all 1.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-sky-600">AI Style Scanner</h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-sky-600 transition duration-300">주요 기능</a>
+                <a href="#process" class="text-gray-600 hover:text-sky-600 transition duration-300">작동 방식</a>
+                <a href="#specs" class="text-gray-600 hover:text-sky-600 transition duration-300">제품 사양</a>
+                <a href="#video" class="text-gray-600 hover:text-sky-600 transition duration-300">소개 영상</a>
+            </nav>
+            <a href="#contact" class="bg-sky-600 text-white font-bold py-2 px-6 rounded-lg hover:bg-sky-700 transition duration-300">문의하기</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white h-screen flex items-center justify-center text-center">
+        <div class="bg-black/50 p-10 rounded-xl">
+            <h2 class="text-5xl md:text-7xl font-black mb-4 section-title reveal">AI Style Scanner</h2>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl reveal" style="transition-delay: 200ms;">AI 스타일 스캐너가 만들어가는 완벽한 자동화, 지금 경험해보세요.</p>
+            <a href="#features" class="bg-white text-sky-700 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-200 transition duration-300 reveal" style="transition-delay: 400ms;">더 알아보기</a>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 py-20">
+        
+        <!-- Features Section -->
+        <section id="features" class="py-20">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold section-title reveal">혁신의 핵심, AI 스타일 스캐너</h3>
+                <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto reveal" style="transition-delay: 200ms;">비교할 수 없는 속도와 정확성으로 세탁 공정을 혁신합니다.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Feature 1: Speed -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-center reveal">
+                    <div class="text-sky-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-2">압도적인 처리 속도</h4>
+                    <p class="text-gray-600">시간당 <span class="text-3xl font-bold text-sky-600 counter" data-target="720">0</span>벌의 의류를 신속하게 촬영하여 대량의 세탁물을 효율적으로 처리합니다.</p>
+                </div>
+                <!-- Feature 2: Accuracy -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-center reveal" style="transition-delay: 200ms;">
+                    <div class="text-sky-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-2">AI 기반의 정확한 분석</h4>
+                    <p class="text-gray-600">최첨단 AI 비전 인식 기술로 다양한 의류를 정확하게 식별하고 품목별로 자동 분류하여 오류를 최소화합니다.</p>
+                </div>
+                <!-- Feature 3: High-Res Image -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg text-center reveal" style="transition-delay: 400ms;">
+                    <div class="text-sky-500 mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-2">4K 초고화질 이미지</h4>
+                    <p class="text-gray-600">4K 해상도로 의류의 작은 디테일까지 놓치지 않고 촬영하여 정밀한 상태 파악 및 검수가 가능합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it Works Section -->
+        <section id="process" class="py-20">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold section-title reveal">완벽한 자동화 프로세스</h3>
+                <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto reveal" style="transition-delay: 200ms;">의류 투입부터 최종 분류까지, 모든 과정이 자동으로 이루어집니다.</p>
+            </div>
+            <div class="relative">
+                <!-- Dotted line connector -->
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-sky-200 -translate-y-1/2"></div>
+                <div class="grid md:grid-cols-4 gap-8 text-center relative">
+                    <!-- Step 1 -->
+                    <div class="reveal">
+                        <div class="relative">
+                           <div class="w-24 h-24 mx-auto rounded-full bg-sky-500 text-white flex items-center justify-center text-3xl font-bold border-4 border-white shadow-lg">1</div>
+                           <img src="assets/slide01_img01.png" alt="의류 투입" class="mt-6 rounded-lg shadow-md w-full">
+                        </div>
+                        <h4 class="text-xl font-bold mt-6 mb-2">의류 투입</h4>
+                        <p class="text-gray-600">옷걸이에 걸린 의류를 컨베이어에 올리면 자동으로 스캐너로 이동합니다.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="reveal" style="transition-delay: 200ms;">
+                        <div class="relative">
+                           <div class="w-24 h-24 mx-auto rounded-full bg-sky-500 text-white flex items-center justify-center text-3xl font-bold border-4 border-white shadow-lg">2</div>
+                           <img src="assets/slide02_img01.jpg" alt="자동 촬영" class="mt-6 rounded-lg shadow-md w-full">
+                        </div>
+                        <h4 class="text-xl font-bold mt-6 mb-2">자동 촬영</h4>
+                        <p class="text-gray-600">의류당 10장의 사진을 4K 초고화질로 신속하게 촬영합니다.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="reveal" style="transition-delay: 400ms;">
+                        <div class="relative">
+                           <div class="w-24 h-24 mx-auto rounded-full bg-sky-500 text-white flex items-center justify-center text-3xl font-bold border-4 border-white shadow-lg">3</div>
+                           <img src="assets/slide04_img01.png" alt="AI 분석 및 검수" class="mt-6 rounded-lg shadow-md w-full">
+                        </div>
+                        <h4 class="text-xl font-bold mt-6 mb-2">AI 분석 및 검수</h4>
+                        <p class="text-gray-600">AI가 이미지를 분석해 품목을 인식하고, 작업자는 모니터로 최종 검수를 진행합니다.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="reveal" style="transition-delay: 600ms;">
+                        <div class="relative">
+                           <div class="w-24 h-24 mx-auto rounded-full bg-sky-500 text-white flex items-center justify-center text-3xl font-bold border-4 border-white shadow-lg">4</div>
+                           <img src="assets/slide03_img01.jpg" alt="자동 배출" class="mt-6 rounded-lg shadow-md w-full">
+                        </div>
+                        <h4 class="text-xl font-bold mt-6 mb-2">자동 배출</h4>
+                        <p class="text-gray-600">검수가 완료된 의류는 성공/실패 슬롯으로 자동 분류 및 배출됩니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       
+
+         <!-- Specs Section -->
+        <section id="specs" class="py-20">
+             <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold section-title reveal">상세 스펙</h3>
+                <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto reveal" style="transition-delay: 200ms;">최고의 성능을 위한 기술 사양</p>
+            </div>
+            <div class="grid md:grid-cols-5 gap-12 items-center">
+                <div class="md:col-span-2 reveal">
+                    <ul class="space-y-6 text-lg">
+                        <li class="flex items-start"><span class="bg-sky-500 text-white rounded-full w-8 h-8 text-center leading-8 font-bold mr-4 shrink-0">1</span><div><strong>촬영 속도:</strong> 시간당 720벌 (분당 12벌)</div></li>
+                        <li class="flex items-start"><span class="bg-sky-500 text-white rounded-full w-8 h-8 text-center leading-8 font-bold mr-4 shrink-0">2</span><div><strong>사진 해상도:</strong> 4K (3840 x 2160)</div></li>
+                        <li class="flex items-start"><span class="bg-sky-500 text-white rounded-full w-8 h-8 text-center leading-8 font-bold mr-4 shrink-0">3</span><div><strong>촬영수:</strong> 의류당 총 10장<br>
+                            <span class="text-sm text-gray-500 ml-2">
+                            - 전면/후면 각 1장 (총 2장)<br>
+                                  - 정면/후면 각 3등분 촬영 (총 6장)<br>
+                                  - 정면/후면 목 부위 촬영 (총 2장)</span>
+                            </div></li>
+                        <li class="flex items-start"><span class="bg-sky-500 text-white rounded-full w-8 h-8 text-center leading-8 font-bold mr-4 shrink-0">4</span><div><strong>배출 시스템:</strong> 배출슬롯 2개 (성공/실패)</div></li>
+                         <li class="flex items-start"><span class="bg-sky-500 text-white rounded-full w-8 h-8 text-center leading-8 font-bold mr-4 shrink-0">5</span><div><strong>모니터링:</strong> 촬영 결과 실시간 확인 가능</div></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-3 grid grid-cols-2 gap-8 items-start reveal" style="transition-delay: 200ms;">
+                    <div class="text-center">
+                        <h5 class="text-xl font-bold mb-3 text-gray-700">원본 사진</h5>
+                        <img src="assets/original.jpeg" alt="원본 사진" class="rounded-lg shadow-md object-cover w-full h-auto">
+                    </div>
+                    <div class="text-center">
+                        <h5 class="text-xl font-bold mb-3 text-gray-700">AI 처리 사진</h5>
+                        <img src="assets/ai_live.png" alt="AI 처리 사진" class="rounded-lg shadow-md object-cover w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section id="video" class="py-20">
+            <div class="text-center mb-16">
+                <h3 class="text-4xl md:text-5xl font-bold section-title reveal">생생한 작동 현장</h3>
+                <p class="text-lg text-gray-600 mt-4 max-w-2xl mx-auto reveal" style="transition-delay: 200ms;">AI 스타일 스캐너가 실제로 어떻게 작동하는지 영상으로 확인해보세요.</p>
+            </div>
+            <div class="aspect-w-16 aspect-h-9 reveal">
+                <!-- 실제 비디오 URL로 교체해주세요. -->
+                 <video class="w-full rounded-2xl shadow-2xl" controls poster="https://placehold.co/1280x720/1E40AF/FFFFFF?text=AI+Style+Scanner+In+Action">
+                    <source src="20220907_020357.mp4" type="video/mp4">
+                    브라우저가 비디오 태그를 지원하지 않습니다.
+                </video>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 text-center bg-sky-700 text-white rounded-2xl">
+            <h3 class="text-4xl md:text-5xl font-bold section-title reveal">도입 문의</h3>
+            <p class="text-lg mt-4 max-w-2xl mx-auto reveal" style="transition-delay: 200ms;">AI 스타일 스캐너에 대해 더 궁금한 점이 있으신가요?<br>지금 바로 문의하여 세탁 비즈니스의 미래를 앞당기세요.</p>
+            <a href="mailto:swkim@lifegoeson.kr" class="mt-8 inline-block bg-white text-sky-700 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-200 transition duration-300 reveal" style="transition-delay: 400ms;">이메일로 문의하기</a>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024 LaundryGo Inc. All rights reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">본 페이지의 이미지와 영상은 연출된 이미지일 수 있습니다.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 스크롤 시 요소 나타나는 애니메이션
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // 숫자 카운터 애니메이션
+        const counterElements = document.querySelectorAll('.counter');
+        
+        const runCounter = (el) => {
+            const target = +el.dataset.target;
+            let current = 0;
+            const increment = target / 100; // 애니메이션 속도 조절
+
+            const updateCounter = () => {
+                if (current < target) {
+                    current += increment;
+                    el.innerText = Math.ceil(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    el.innerText = target;
+                }
+            };
+            updateCounter();
+        };
+
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    runCounter(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        counterElements.forEach(el => {
+            counterObserver.observe(el);
+        });
+    </script>
+</body>
+</html>
+
+
+
